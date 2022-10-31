@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css"
+      integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Practice</title>
+  </head>
+  <body>
+    <div class="container" id="cv">
+      <h1 class="text-center my-3">CV Generator</h1>
+      <p class="text-center" style="font-weight: bold">By DreamDevs.</p>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>General information</h3>
+          <div class="form-group">
+            <label for="name">Your name: </label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              placeholder="Type here.."
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="phone">Your phone number: </label>
+            <input
+              type="text"
+              id="phone"
+              class="form-control"
+              placeholder="Type here.."
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="address">Your address: </label>
+            <textarea
+              id="address"
+              class="form-control"
+              placeholder="Type here.."
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="form-group mt-3">
+            <label for="profile">Select a file (Image)</label>
+            <input type="file" id="profile" class="form-control" />
+          </div>
+          <p class="text-secondary mt-2">Important links</p>
+          <div class="form-group mt-2">
+            <label for="facebook">Facebook: </label>
+            <input
+              type="text"
+              id="facebook"
+              class="form-control"
+              placeholder="Type here.."
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="instagram">Instagram: </label>
+            <input
+              type="text"
+              id="instagram"
+              class="form-control"
+              placeholder="Type here.."
+            />
+          </div>
+          <div class="form-group mt-2">
+            <label for="linkedin">Linkedin: </label>
+            <input
+              type="text"
+              id="linkedin"
+              class="form-control"
+              placeholder="Type here.."
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3>Profession</h3>
+          <div class="form-group mt-2">
+            <label for="objective">Objective: </label>
+            <textarea
+              id="objective"
+              class="form-control"
+              placeholder="Type here.."
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="form-group mt-2" id="workExperienceElement">
+            <label for="workExperience">Work Experience: </label>
+            <textarea
+              id="workExperience"
+              class="form-control workExperienceField"
+              placeholder="Type here.."
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-3" id="workExperienceButton">
+              <button
+                onclick="addNewWorkExperience()"
+                class="btn btn-dark btn-sm"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+          <div class="form-group mt-2" id="qualificationElement">
+            <label for="qualification">Qualification: </label>
+            <textarea
+              id="qualification"
+              class="form-control qualificationField"
+              placeholder="Type here.."
+              rows="3"
+            ></textarea>
+            <div class="container text-center mt-3" id="qualificationButton">
+              <button
+                onclick="addNewQualification()"
+                class="btn btn-dark btn-sm"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center mt-3">
+        <button onclick="generateCv()" class="btn btn-primary btn-lg">
+          Generate
+        </button>
+      </div>
+    </div>
+    <div class="container" id="template">
+      <div class="row">
+        <div class="col-md-4 text-center py-5" id="background">
+          <img
+            src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
+            alt="image"
+            class="img-fluid"
+            id="image"
+          />
+          <div class="container">
+            <p id="templateName">DreamDevs</p>
+            <p id="templatePhone">+777 77 77 77</p>
+            <p id="templateAddress">Georgia, Tbilisi</p>
+            <hr style="border-color: #000; border-width: 2px" />
+            <p>
+              <a id="templateFacebook">https://facebook.com/dreamdevs</a>
+            </p>
+            <p>
+              <a id="templateInstragram">https://instagram.com/dreamdevs</a>
+            </p>
+            <p>
+              <a id="templateLinkedin">https://linkedin.com/dreamdevs</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-8 py-5">
+          <h1 id="templateTwoName" class="text-center" style="font-weight: 900">
+            DreamDevs
+          </h1>
+          <div class="card mt-4">
+            <div class="card-header">
+              <h3>Objective</h3>
+            </div>
+            <div class="card-body">
+              <p id="templateObjective">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
+                magnam minus, iusto et architecto nihil ad porro beatae, quia
+                praesentium libero, ipsam cumque saepe cum?
+              </p>
+            </div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-header">
+              <h3>Work Experience</h3>
+            </div>
+            <div class="card-body">
+              <ul id="templateWorkExperience">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet. Lorem, ipsum.</li>
+                <li>
+                  Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+                  consectetur.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-header">
+              <h3>Qualification</h3>
+            </div>
+            <div class="card-body">
+              <ul id="templateQualification">
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet. Lorem, ipsum.</li>
+                <li>
+                  Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+                  consectetur.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="container mt-3 text-center">
+            <button onclick="printCv()" class="btn btn-warning btn-lg">
+              Print
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

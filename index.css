@@ -1,0 +1,40 @@
+/* GLOBAL */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(111, 120, 233);
+}
+
+a {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}
+
+/* MAIN */
+
+.container p {
+  color: #fff;
+}
+
+#template {
+  display: none;
+}
+
+#image {
+  border-radius: 50%;
+  width: 200px;
+}
+
+#background {
+  background-color: rebeccapurple;
+}
+
+.btn-warning {
+  font-weight: bold;
+  padding: 10px 30px;
+}
